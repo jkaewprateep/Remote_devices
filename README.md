@@ -35,6 +35,14 @@ temp = tf.nn.softmax(temp)
 action = int(np.argmax(temp))	
 ```
 
+### Files and Directory ###
+
+Using Tensorflow to create dataset file, using for model training for parallel parameters.
+``` 
+1. create_dataset.py
+2. FlappyBird_small.gif
+3. README.md
+``` 
 
 ## Result image ##
 ![Alt text](https://github.com/jkaewprateep/Remote_devices/blob/main/FlappyBird_small.gif?raw=true "Title")
