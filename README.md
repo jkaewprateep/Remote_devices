@@ -57,6 +57,9 @@ class MyDenseLayer(tf.keras.layers.Layer):
 		return tf.nn.softmax( temp, axis=0 )
 ```
 
+### Leanrning layer, extracting weights from trained layer ###
+
+It is simply as call varaibles from a return functions, the output is numbers of arrays you can copy and saved or resue of it a simple mathametics required at this point because you need to match the output to remote target learning devices or diemensions extraction layers or create inverse matrix for parallel parameters as you see the final results we running the auto-play auto-pilots game Flappy birds and many of games by only simple functions that run in any platform or multiplexers.
 ```
 Conv2DTranspose_01 = model.get_layer( name="Conv2DTranspose_01" )
 weights_01 = Conv2DTranspose_01.get_weights()[0]
