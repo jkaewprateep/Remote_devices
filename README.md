@@ -99,16 +99,16 @@ Using Tensorflow or any random function to running model training parallel param
 
 We create a guidline for out AI to learn about the game rules, that is important because AI not only self-learning but also learn follow by the rules we setup and we as referees we know it is learning as the objective or they try something else.
 ```
-gap 0 = abs( player_y_array - next_pipe_top_y_array ) - saety value
-gap 1 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
-gap 2 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
-gap 3 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
-gap 4 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
-gap 5 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
-gap 6 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
-gap 7 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
-gap 8 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
-gap 9 = abs( player_y_array - next_next_pipe_bottom_y_array ) - saety value
+gap 0 = abs( player_y_array - next_pipe_top_y_array ) - saety value 1
+gap 1 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value 2
+gap 2 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value 3
+gap 3 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value 4
+gap 4 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value 5
+gap 5 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value 6
+gap 6 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value 7
+gap 7 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value 8
+gap 8 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value 9
+gap 9 = abs( player_y_array - next_next_pipe_bottom_y_array ) - saety value 10
 ```
 
 ### Final running parallel parameters ###
