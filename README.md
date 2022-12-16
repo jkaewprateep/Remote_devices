@@ -81,7 +81,7 @@ next_next_pipe_top_y_array = gameState['next_next_pipe_top_y']
 next_next_pipe_bottom_y_array = gameState['next_next_pipe_bottom_y']
 ```
 
-### Actions and action as dictionaty ###
+### Actions and action as dictionary ###
 
 I explained as distributions statistics when there are 10 actions target, 10 input parameters from game running and our parallel parameters from trained model and simple function of program such as MAX, MIN, MOD, DIV, SUB, ADD, MUL, RAND and etc. We use SoftMax() to help about understanding oterwise it required some conditions when the output values are too different and we compare them.
 ```
