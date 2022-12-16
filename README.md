@@ -93,7 +93,27 @@ reward = p.act(list(actions.values())[action])
 
 ### Running parallel parameters in remote devices ###
 
-Using Tensorflow or any random function to running model training parallel parameters on remote devices, it is simly quantization and distribution in statistics by load parameters are the environment response, select one of the hight responsive scores as the game auto-play response. There are number of steps average from one gap to anoter gap as traveling path and player height and gap heights different. We do just select maximum numbner response for ranges setup and select action from the list action number return from function.
+Using Tensorflow or any random function to running model training parallel parameters on remote devices, it is simly quantization and distribution in statistics by load parameters are the environment response, select one of the hight responsive scores as the game auto-play response. There are number of steps average from one gap to anoter gap as traveling path and player height and gap heights different. We do just select maximum number response for ranges setup and select action from the list action number return from function. 
+
+### Line dot function for guides our Flappy bird play to fly ###
+
+We create a guidline for out AI to learn about the game rules, that is important because AI not only self-learning but also learn follow by the rules we setup and we as referees we know it is learning as the objective or they try something else.
+```
+gap 0 = abs( player_y_array - next_pipe_top_y_array ) - saety value
+gap 1 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
+gap 2 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
+gap 3 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
+gap 4 = abs( player_y_array - abs( next_pipe_top_y_array - next_pipe_bottom_y_array ) ) - saety value
+gap 5 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
+gap 6 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
+gap 7 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
+gap 8 = abs( player_y_array - abs( next_next_pipe_top_y_array - next_next_pipe_bottom_y_array ) ) - saety value
+gap 9 = abs( player_y_array - next_next_pipe_bottom_y_array ) - saety value
+```
+
+### Final running parallel parameters ###
+
+At the remote deivices we train the model using model.fit() and we see the results is acceptable we extract weights values or we train a simetric model and extracting values to fit the target matrix capable. Those coeeficients are input from the game environment change on each step in the game state.
 ```
 temp = tf.random.normal([10], 1, 0.2, tf.float32)
 temp = np.asarray(temp) * np.asarray([ coefficient_0, coefficient_1, coefficient_2, coefficient_3, 
