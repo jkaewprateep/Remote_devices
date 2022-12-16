@@ -16,6 +16,8 @@ Model weight is a set of trained parameters and bias those depends on what is yo
 ```
 
 ### Not leanrning layer, freezes answer layer ###
+
+In some implementations they required the same results for everytime running such as calculation of units and values, summation and minmum-maximum or runing specific parameters input without training updates.
 ```
 class MyDenseLayer(tf.keras.layers.Layer):
 	def __init__(self, num_outputs):
@@ -33,6 +35,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
 
 ### Leanrning layer, tracing back update weights layer ###
 
+In back-propagation learning is estimation of weight change of the previous input or result compares to current ( Weights + bias ) and the optimizer is engine to remarks targets and loss function is the estimation of the paces from current step to next as traveling path. The update back of the values compare to current weights and bias and update. Some algotithms update once or update everytime, it is same as people learning when the knowledge or senses is change from they acceptable or the bias we mean the learning bias or they beleviving it is true and we have the new true that different only a bit of values it updates to weights. The result in weights changed see as traned parameters and we finallzed as parallel parameters.
 ```
 class MyDenseLayer(tf.keras.layers.Layer):
 	def __init__(self, num_outputs, name="MyDenseLayer"):
@@ -48,7 +51,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
 	
 		# Weights from learning effects with input.
 		temp = tf.reshape( inputs, shape=(10, 1) )
-		temp = tf.matmul( inputs, self.kernel )
+		temp = tf.matmul( inputs, self.kernel ) + self.biases
 		
 		# Posibility of x in all and x.
 		return tf.nn.softmax( temp, axis=0 )
