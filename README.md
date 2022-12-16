@@ -59,7 +59,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
 
 ### Leanrning layer, extracting weights from trained layer ###
 
-It is simply as call varaibles from a return functions, the output is numbers of arrays you can copy and saved or resue of it a simple mathametics required at this point because you need to match the output to remote target learning devices or diemensions extraction layers or create inverse matrix for parallel parameters as you see the final results we running the auto-play auto-pilots game Flappy birds and many of games by only simple functions that run in any platform or multiplexers.
+It is simply as call varaibles from a return functions, the output is numbers of arrays you can copy and saved or resue of it, simple mathametics required at this point because you need to match the output to remote target learning devices or diemensions extraction layers or create inverse matrix for parallel parameters as you see the final results we running the auto-play auto-pilots game Flappy birds and many of games by only simple functions that run in any platform or multiplexers.
 ```
 Conv2DTranspose_01 = model.get_layer( name="Conv2DTranspose_01" )
 weights_01 = Conv2DTranspose_01.get_weights()[0]
@@ -82,6 +82,8 @@ next_next_pipe_bottom_y_array = gameState['next_next_pipe_bottom_y']
 ```
 
 ### Actions and action as dictionaty ###
+
+I explained as distributions statistics when there are 10 actions target, 10 input parameters from game running and our parallel parameters from trained model and simple function of program such as MAX, MIN, MOD, DIV, SUB, ADD, MUL, RAND and etc. ( We use SoftMax() to help about understanding oterwise it required some conditions when the output values are too different and we compare them ) 
 ```
 actions = { "up_1": K_h, "none_1": K_w, "none_2": K_h, "none_3": K_h, "none_4": K_h, "none_5": K_h, 
             "none_6": K_h, "none_7": K_h, "none_8": K_h, "none_9": K_h }
