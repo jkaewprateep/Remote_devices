@@ -1,5 +1,64 @@
 # Remote_devices
-Running parallel parameters on the remote devices
+Running parallel parameters on the remote devices, usages of AI and machine learning are widely spreads and we cannot installed Tensorflow into every devices. The method we usually do it transfrom the final results from model trained layers into parallel parameters it is when you looking into the model weights it is only numbers output as arrays.
+
+### Trained model weights or layer weights ###
+
+Model weight is a set of trained parameters and bias those depends on what is your input into the model and layer, you can build the custom layers without bias but it will take long time to converges or it not converges for some optimizers depend on backward-propagation learning only. 
+```
+[[[[ 0.2707774  -0.06248572 -0.21273609]
+   [-0.14883357 -0.25654262 -0.3296967 ]]
+
+  [[ 0.08184502 -0.26611787 -0.0798333 ]
+   [-0.03979453  0.10016242 -0.09921739]]
+
+  [[ 0.14356184  0.3443761  -0.21177462]
+   [-0.26943463  0.04512939 -0.18201178]]]
+```
+
+### Not leanrning layer, freezes answer layer ###
+```
+class MyDenseLayer(tf.keras.layers.Layer):
+	def __init__(self, num_outputs):
+		super(MyDenseLayer, self).__init__()
+		self.num_outputs = num_outputs
+		
+	def build(self, input_shape):
+		self.kernel = self.add_weight("kernel",
+		shape=[int(input_shape[-1]),
+		self.num_outputs])
+
+	def call(self, inputs):
+		return tf.matmul(inputs, self.kernel)
+```
+
+### Leanrning layer, tracing back update weights layer ###
+
+```
+class MyDenseLayer(tf.keras.layers.Layer):
+	def __init__(self, num_outputs, name="MyDenseLayer"):
+		super(MyDenseLayer, self).__init__()
+		self.num_outputs = num_outputs
+
+	def build(self, input_shape):
+		self.kernel = self.add_weight("kernel",
+		shape=[int(input_shape[-1]), 1])
+		self.biases = tf.zeros([int(input_shape[-1]), 1])
+
+	def call(self, inputs):
+	
+		# Weights from learning effects with input.
+		temp = tf.reshape( inputs, shape=(10, 1) )
+		temp = tf.matmul( inputs, self.kernel )
+		
+		# Posibility of x in all and x.
+		return tf.nn.softmax( temp, axis=0 )
+```
+
+```
+Conv2DTranspose_01 = model.get_layer( name="Conv2DTranspose_01" )
+weights_01 = Conv2DTranspose_01.get_weights()[0]
+weights_02 = Conv2DTranspose_01.get_weights()[1]
+```
 
 ### Games input environment parameters ###
 
