@@ -83,7 +83,7 @@ next_next_pipe_bottom_y_array = gameState['next_next_pipe_bottom_y']
 
 ### Actions and action as dictionaty ###
 
-I explained as distributions statistics when there are 10 actions target, 10 input parameters from game running and our parallel parameters from trained model and simple function of program such as MAX, MIN, MOD, DIV, SUB, ADD, MUL, RAND and etc. ( We use SoftMax() to help about understanding oterwise it required some conditions when the output values are too different and we compare them ) 
+I explained as distributions statistics when there are 10 actions target, 10 input parameters from game running and our parallel parameters from trained model and simple function of program such as MAX, MIN, MOD, DIV, SUB, ADD, MUL, RAND and etc. We use SoftMax() to help about understanding oterwise it required some conditions when the output values are too different and we compare them.
 ```
 actions = { "up_1": K_h, "none_1": K_w, "none_2": K_h, "none_3": K_h, "none_4": K_h, "none_5": K_h, 
             "none_6": K_h, "none_7": K_h, "none_8": K_h, "none_9": K_h }
@@ -93,7 +93,7 @@ reward = p.act(list(actions.values())[action])
 
 ### Running parallel parameters in remote devices ###
 
-Using Tensorflow or any random function to running model training parallel parameters on remote devices, it is simly quantization and distribution in statistics by load parameters are the environment response, select one of the hight responsive scores as the game auto-play response.
+Using Tensorflow or any random function to running model training parallel parameters on remote devices, it is simly quantization and distribution in statistics by load parameters are the environment response, select one of the hight responsive scores as the game auto-play response. There are number of steps average from one gap to anoter gap as traveling path and player height and gap heights different. We do just select maximum numbner response for ranges setup and select action from the list action number return from function.
 ```
 temp = tf.random.normal([10], 1, 0.2, tf.float32)
 temp = np.asarray(temp) * np.asarray([ coefficient_0, coefficient_1, coefficient_2, coefficient_3, 
